@@ -1,7 +1,7 @@
 package com.levelup.forestsandmonsters;
 
 import java.awt.Point;
-
+import java.awt.*;
 public class GameController {
     // TODO: If your stakeholder wants to call this CHARACTER, change var name for
     // low representational gap
@@ -10,6 +10,8 @@ public class GameController {
     public class GameStatus {
         // TODO: Add other status data
         public String characterName = DEFAULT_CHARACTER_NAME;
+        public String playerName = DEFAULT_PLAYER_NAME;
+        public Point currentPosition = null;
     }
 
     GameStatus status;
@@ -18,6 +20,10 @@ public class GameController {
         status = new GameStatus();
     }
 
+    public void setCharacterPosition(Point coordinates){ 
+ // TODO: IMPLEMENT THIS 
+
+    }
     // TODO: Ensure this AND CLI commands match domain model
     public static enum DIRECTION {
         NORTH, SOUTH, EAST, WEST
