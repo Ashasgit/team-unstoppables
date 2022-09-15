@@ -29,7 +29,7 @@ public void givenTheCharacterStartsAtY(Integer startY) {
     this.startY = startY;
 }
 
-@Given("the player choses to move in {direction}")
+@Given("the player choses to move in {string}")
 public void givenPlayerChoosesDirection(String direction) {
     // Write code here that turns the phrase above into concrete actions
     this.direction = GameController.DIRECTION.valueOf(direction);   
