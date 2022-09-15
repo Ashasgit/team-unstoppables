@@ -15,7 +15,7 @@ jobs:
       run: make bootstrap
       
     - name: Run tests and CI build
-      run: make test
+      run: ./gradlew test
   
   acceptance-test:
     runs-on: ubuntu-latest
@@ -27,9 +27,18 @@ jobs:
       run: make bootstrap
       
     - name: Run acceptance tests
-      run: make test-acceptance
+      run: ./gradlew cucumberCli
+
+    - name: Make output dir
+      if: ${{ always() }}
+      run: mkdir -p ./output
+
+    - name: Copy images to output dir
+      if: ${{ always() }}
+      run: cp -R src/test/resources/images output
 
     - name: Cache test output
+      if: ${{ always() }}
       uses: actions/cache@v3
       with:
         path: ./output
