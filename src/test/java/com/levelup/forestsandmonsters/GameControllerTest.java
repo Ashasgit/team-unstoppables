@@ -1,7 +1,7 @@
 package com.levelup.forestsandmonsters;
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
 
@@ -23,4 +23,14 @@ public class GameControllerTest {
         GameController testObj = new GameController();
         assertNotNull(testObj.getCharacter().getName());
     }
+
+    @Test
+    public void test_create_custom_character_with_name() {
+        GameController testObj = new GameController();
+        testObj.getCharacter().setName("Mario");
+        String name = testObj.getCharacter().getName();
+        assertEquals(name, "Mario");
+    }
+
+
 }
