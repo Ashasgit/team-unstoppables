@@ -111,7 +111,14 @@ public class GameControllerTest {
 
     }
 
+    @Test
+    public void test_end_game(){
+        GameController testObj = new GameController();
+        testObj.startGame();
+        testObj.createCharacter("Diago");
+        System.out.println(testObj.getStatus());
 
+    }
 
 
 

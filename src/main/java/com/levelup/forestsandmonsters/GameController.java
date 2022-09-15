@@ -35,7 +35,10 @@ public class GameController {
         public Point getCurrentPosition() {
             return currentPosition;
         }
-
+        @Override
+        public String toString() {
+            return "Character Name:" + characterName + "\nEnd Position:" + currentPosition.x + "," + currentPosition.y;
+        }
     }
 
     GameStatus status;
@@ -87,6 +90,10 @@ public class GameController {
         return this.status;
     }
 
+    public void endGame() {
+        System.out.println(status);
+
+    }
     public void move(DIRECTION directionToMove) {
         // TODO: Implement move - should call something on another class
         // TODO: Should probably also update the game results
