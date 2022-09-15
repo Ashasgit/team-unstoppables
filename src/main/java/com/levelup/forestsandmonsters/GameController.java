@@ -1,12 +1,21 @@
 package com.levelup.forestsandmonsters;
 
 import java.awt.Point;
-import java.awt.*;
+
 public class GameController {
     // TODO: If your stakeholder wants to call this CHARACTER, change var name for
     // low representational gap
     static final String DEFAULT_CHARACTER_NAME = "Character";
     private GameCharacter character = null;
+    private GameMap map= null;
+
+    public GameMap getMap() {
+        return map;
+    }
+
+    public void setMap(GameMap map) {
+        this.map = map;
+    }
 
     public GameCharacter getCharacter() {
         return character;
@@ -28,6 +37,8 @@ public class GameController {
         status = new GameStatus();
         character = new GameCharacter();
         character.setName(DEFAULT_CHARACTER_NAME);
+        map = new GameMap();
+        
     }
 
     public void setCharacterPosition(Point coordinates){ 

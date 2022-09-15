@@ -2,6 +2,7 @@ package com.levelup.forestsandmonsters;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.Test;
 
@@ -45,6 +46,46 @@ public class GameControllerTest {
         testObj.createCharacter("");
         assertEquals(testObj.getCharacter().getName(), GameController.DEFAULT_CHARACTER_NAME);
     }
+
+    @Test
+    public void test_game_start_initializes_map() {
+        GameController testObj = new GameController();
+        assertNotNull(testObj.getMap());
+    }
+
+    @Test
+    public void test_game_start_initializes_map_with_x_axis_length() {
+        GameController testObj = new GameController();
+        assertTrue(testObj.getMap().getXLength() > 0);
+
+    }
+
+    @Test
+    public void test_game_start_initializes_map_with_y_axis_length() {
+        GameController testObj = new GameController();
+        assertTrue(testObj.getMap().getYLength() > 0);
+
+    }
+
+    @Test
+    public void test_game_start_initializes_map_with_x_start_coordinate() {
+        GameController testObj = new GameController();
+        assertTrue(testObj.getMap().getXStart() > 0);
+
+    }
+
+
+    @Test
+    public void test_game_start_initializes_map_with_y_start_coordinate() {
+        GameController testObj = new GameController();
+        assertTrue(testObj.getMap().getYStart() > 0);
+
+    }
+
+
+
+
+
 
 
 
