@@ -64,5 +64,23 @@ public void y_coordinates9() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
+
+@Given("the player choses to move in NORTH")
+public void the_player_choses_to_move_in_north() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Given("the player choses to move in SOUTH")
+public void the_player_choses_to_move_in_south() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+@Given("the player choses to move in EAST")
+public void the_player_choses_to_move_in_east() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
     
 }
