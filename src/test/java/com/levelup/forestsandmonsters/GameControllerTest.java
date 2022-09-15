@@ -32,5 +32,20 @@ public class GameControllerTest {
         assertEquals(name, "Mario");
     }
 
+    @Test
+    public void test_create_custom_character_with_name_scenario_2() {
+        GameController testObj = new GameController();
+        testObj.createCharacter("Mario");
+        assertEquals(testObj.getCharacter().getName(), "Mario");
+    }
+
+    @Test
+    public void test_create_custom_character_with_name_scenario_3() {
+        GameController testObj = new GameController();
+        testObj.createCharacter("");
+        assertEquals(testObj.getCharacter().getName(), GameController.DEFAULT_CHARACTER_NAME);
+    }
+
+
 
 }

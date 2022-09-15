@@ -42,11 +42,14 @@ public class GameController {
     // Pre-implemented to demonstrate ATDD
     // TODO: Update this if it does not match your design
     public void createCharacter(String name) {
+        
         if (name != null && !name.equals("")) {
             status.characterName = name;
+            getCharacter().setName(name);
         } else {
             status.characterName = DEFAULT_CHARACTER_NAME;
         }
+
     }
 
     public void startGame() {
