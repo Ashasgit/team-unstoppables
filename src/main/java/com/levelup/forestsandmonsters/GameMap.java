@@ -1,10 +1,10 @@
 package com.levelup.forestsandmonsters;
 
 public class GameMap {
-    private static final int xLength =  10;
-    private static final int yLength =  10;
-    private static final int xStart = 5;
-    private static final int yStart = 5;
+    public static final int xLength =  10;
+    public static final int yLength =  10;
+    public static final int xStart = 5;
+    public static final int yStart = 5;
     
 
     public int getXLength() {

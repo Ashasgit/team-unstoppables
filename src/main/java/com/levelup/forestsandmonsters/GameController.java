@@ -29,6 +29,13 @@ public class GameController {
         // TODO: Add other status data
         public String characterName = DEFAULT_CHARACTER_NAME;
         public Point currentPosition = null;
+        public void setCurrentPosition(Point currentPosition) {
+            this.currentPosition = currentPosition;
+        }
+        public Point getCurrentPosition() {
+            return currentPosition;
+        }
+
     }
 
     GameStatus status;
@@ -37,7 +44,7 @@ public class GameController {
         status = new GameStatus();
         character = new GameCharacter();
         character.setName(DEFAULT_CHARACTER_NAME);
-        map = new GameMap();
+       
         
     }
 
@@ -63,10 +70,17 @@ public class GameController {
 
     }
 
+    /**
+     * The method
+     * -> Creates a game map
+     * -> Puts a character on the map
+     * -> Updates the Game Result
+     */
     public void startGame() {
-        // TODO: Implement startGame - Should probably create tiles and put the character
-        // on them?
-        // TODO: Should also update the game results?
+        map = new GameMap();
+        getStatus().setCurrentPosition(new Point(map.getXStart(), map.getYStart()));
+        getCharacter().setCurrentPosition(new Point(GameMap.xStart, GameMap.yStart));
+
     }
 
     public GameStatus getStatus() {

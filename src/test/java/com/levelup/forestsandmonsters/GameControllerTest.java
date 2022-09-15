@@ -50,12 +50,14 @@ public class GameControllerTest {
     @Test
     public void test_game_start_initializes_map() {
         GameController testObj = new GameController();
+        testObj.startGame();
         assertNotNull(testObj.getMap());
     }
 
     @Test
     public void test_game_start_initializes_map_with_x_axis_length() {
         GameController testObj = new GameController();
+        testObj.startGame();
         assertTrue(testObj.getMap().getXLength() > 0);
 
     }
@@ -63,6 +65,7 @@ public class GameControllerTest {
     @Test
     public void test_game_start_initializes_map_with_y_axis_length() {
         GameController testObj = new GameController();
+        testObj.startGame();
         assertTrue(testObj.getMap().getYLength() > 0);
 
     }
@@ -70,6 +73,7 @@ public class GameControllerTest {
     @Test
     public void test_game_start_initializes_map_with_x_start_coordinate() {
         GameController testObj = new GameController();
+        testObj.startGame();
         assertTrue(testObj.getMap().getXStart() > 0);
 
     }
@@ -78,7 +82,32 @@ public class GameControllerTest {
     @Test
     public void test_game_start_initializes_map_with_y_start_coordinate() {
         GameController testObj = new GameController();
+        testObj.startGame();
         assertTrue(testObj.getMap().getYStart() > 0);
+
+    }
+
+    @Test
+    public void test_game_start_has_current_x_position() {
+        GameController testObj = new GameController();
+        testObj.startGame();
+        assertTrue(testObj.status.currentPosition.x == GameMap.xStart);
+    }
+
+
+    @Test
+    public void test_game_start_has_current_y_position() {
+        GameController testObj = new GameController();
+        testObj.startGame();
+        assertTrue(testObj.status.currentPosition.y == GameMap.yStart);
+    }
+
+    @Test
+    public void test_game_character_has_current_position() {
+        GameController testObj = new GameController();
+        testObj.startGame();
+        testObj.createCharacter("");
+        assertTrue(testObj.getStatus().getCurrentPosition().getX() == testObj.getCharacter().getCurrentPosition().getX());
 
     }
 
