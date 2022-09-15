@@ -2,7 +2,10 @@ package com.levelup.forestsandmonsters;
 import java.awt.Point;
 
 public class GameCharacter {
+
     private Point currentPosition;
+    private String name;
+
     public Point getCurrentPosition() {
         return currentPosition;
     }
@@ -10,8 +13,6 @@ public class GameCharacter {
     public void setCurrentPosition(Point currentPosition) {
         this.currentPosition = currentPosition;
     }
-
-    private String name;
 
     public String getName() {
         return name;
@@ -21,9 +22,4 @@ public class GameCharacter {
         this.name = name;
     }
 
-
-
-
-
-    
 }

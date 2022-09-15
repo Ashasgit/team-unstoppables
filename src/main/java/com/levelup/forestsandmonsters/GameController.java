@@ -26,7 +26,6 @@ public class GameController {
     }
 
     public class GameStatus {
-        // TODO: Add other status data
         public String characterName = DEFAULT_CHARACTER_NAME;
         public Point currentPosition = null;
         public void setCurrentPosition(Point currentPosition) {
@@ -47,21 +46,17 @@ public class GameController {
         status = new GameStatus();
         character = new GameCharacter();
         character.setName(DEFAULT_CHARACTER_NAME);
-       
-        
     }
 
     public void setCharacterPosition(Point coordinates){ 
  // TODO: IMPLEMENT THIS 
 
     }
-    // TODO: Ensure this AND CLI commands match domain model
+    // CLI commands matches domain model
     public static enum DIRECTION {
         NORTH, SOUTH, EAST, WEST
     }
 
-    // Pre-implemented to demonstrate ATDD
-    // TODO: Update this if it does not match your design
     public void createCharacter(String name) {
         
         if (name != null && !name.equals("")) {
@@ -73,12 +68,6 @@ public class GameController {
 
     }
 
-    /**
-     * The method
-     * -> Creates a game map
-     * -> Puts a character on the map
-     * -> Updates the Game Result
-     */
     public void startGame() {
         map = new GameMap();
         getStatus().setCurrentPosition(new Point(map.getXStart(), map.getYStart()));

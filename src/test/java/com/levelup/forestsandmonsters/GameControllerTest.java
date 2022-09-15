@@ -78,13 +78,11 @@ public class GameControllerTest {
 
     }
 
-
     @Test
     public void test_game_start_initializes_map_with_y_start_coordinate() {
         GameController testObj = new GameController();
         testObj.startGame();
         assertTrue(testObj.getMap().getYStart() > 0);
-
     }
 
     @Test
@@ -93,7 +91,6 @@ public class GameControllerTest {
         testObj.startGame();
         assertTrue(testObj.status.currentPosition.x == GameMap.xStart);
     }
-
 
     @Test
     public void test_game_start_has_current_y_position() {
@@ -117,7 +114,6 @@ public class GameControllerTest {
         testObj.startGame();
         testObj.createCharacter("Diago");
         System.out.println(testObj.getStatus());
-
     }
 
 
