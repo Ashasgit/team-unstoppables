@@ -10,7 +10,6 @@ public class GameController {
     public class GameStatus {
         // TODO: Add other status data
         public String characterName = DEFAULT_CHARACTER_NAME;
-        public String playerName = DEFAULT_PLAYER_NAME;
         public Point currentPosition = null;
     }
 
