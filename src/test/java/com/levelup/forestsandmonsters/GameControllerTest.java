@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.Test;
 
+import com.levelup.forestsandmonsters.GameController.DIRECTION;
+
 public class GameControllerTest {
     @Test
     public void InitializationCreatesResults() {
@@ -114,6 +116,21 @@ public class GameControllerTest {
         testObj.startGame();
         testObj.createCharacter("Diago");
         System.out.println(testObj.getStatus());
+    }
+
+    @Test
+    public void test_move() {
+        GameController testObj = new GameController();
+        testObj.startGame();
+        testObj.createCharacter("Diago");
+        testObj.move(DIRECTION.EAST);
+
+        assertTrue(testObj.getStatus().getMoveCount() == 1);
+
+        testObj.move(DIRECTION.EAST);
+
+        assertTrue(testObj.getStatus().getMoveCount() == 2);
+
     }
 
 

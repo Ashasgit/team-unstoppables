@@ -26,6 +26,15 @@ public class GameController {
     public class GameStatus {
         public String characterName = DEFAULT_CHARACTER_NAME;
         public Point currentPosition = null;
+        public int moveCount;
+
+        public int getMoveCount() {
+            return moveCount;
+        }
+
+        public void setMoveCount(int moveCount) {
+            this.moveCount = moveCount;
+        }
 
         public void setCurrentPosition(Point currentPosition) {
             this.currentPosition = currentPosition;
@@ -37,9 +46,13 @@ public class GameController {
 
         @Override
         public String toString() {
-            return "Character Name:" + characterName 
-            + "\nEnd Position:" + currentPosition.x + "," + currentPosition.y
-            +"\nGood Bye";
+            return "\n************************************"
+            +"\nGAME SUMMARY"
+            +"\n\n\t[You Played As: " + characterName 
+            + "\n\tYou Ended At: " + currentPosition.x + "," + currentPosition.y
+            +"\n\tYou Moved: " + moveCount + " tiles]"
+            +"\n\nGOOD BYE"
+            +"\n************************************";
         }
     }
 
@@ -91,6 +104,7 @@ public class GameController {
     }
 
     public void endGame() {
+    
         System.out.println(status);
 
     }
@@ -120,9 +134,10 @@ public class GameController {
 
         if (map.isValidPostion(x, y)) {
             currentPosition.setLocation(x, y);
+            status.setMoveCount(status.getMoveCount() + 1);
         }
 
-        System.out.println("Moved " + directionToMove + "To: " + currentPosition.x +" , " + currentPosition.y);
+        System.out.println("Moved " + directionToMove + " To: " + currentPosition.x +" , " + currentPosition.y);
         status.setCurrentPosition(currentPosition);
 
     }
