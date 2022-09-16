@@ -3,7 +3,7 @@ package com.levelup.forestsandmonsters;
 import java.awt.Point;
 
 public class GameController {
-    static final String DEFAULT_CHARACTER_NAME = "Character";
+    static final String DEFAULT_CHARACTER_NAME = "DefaultCharacter";
     private GameCharacter character = null;
     private GameMap map = null;
 
@@ -37,7 +37,9 @@ public class GameController {
 
         @Override
         public String toString() {
-            return "Character Name:" + characterName + "\nEnd Position:" + currentPosition.x + "," + currentPosition.y;
+            return "Character Name:" + characterName 
+            + "\nEnd Position:" + currentPosition.x + "," + currentPosition.y
+            +"\nGood Bye";
         }
     }
 
@@ -72,9 +74,15 @@ public class GameController {
     }
 
     public void startGame() {
+    
         map = new GameMap();
         getStatus().setCurrentPosition(new Point(map.getXStart(), map.getYStart()));
         getCharacter().setCurrentPosition(new Point(GameMap.xStart, GameMap.yStart));
+        System.out.println("Welcome to Level Up Games.");
+        System.out.println("Follow the instructions to play the game");
+        System.out.println("Your Start Co-ordinates are:" + getCharacter().getCurrentPosition().x 
+            +","+ getCharacter().getCurrentPosition().y);
+        System.out.println("The board size is " + map.getXLength() +" by " + map.getYLength());
 
     }
 
@@ -114,7 +122,7 @@ public class GameController {
             currentPosition.setLocation(x, y);
         }
 
-        System.out.println("Moved " + directionToMove + "To:" + currentPosition);
+        System.out.println("Moved " + directionToMove + "To: " + currentPosition.x +" , " + currentPosition.y);
         status.setCurrentPosition(currentPosition);
 
     }
