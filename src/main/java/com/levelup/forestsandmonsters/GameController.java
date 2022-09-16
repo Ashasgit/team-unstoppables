@@ -49,7 +49,9 @@ public class GameController {
     }
 
     public void setCharacterPosition(Point coordinates){ 
- // TODO: IMPLEMENT THIS 
+        character.setCurrentPosition(coordinates);
+
+        System.out.println("Character Position: " +  character.getCurrentPosition());
 
     }
     // CLI commands matches domain model
@@ -84,10 +86,24 @@ public class GameController {
 
     }
     public void move(DIRECTION directionToMove) {
-        // TODO: Implement move - should call something on another class
-        // TODO: Should probably also update the game results
+        
+        if(DIRECTION.NORTH.equals(directionToMove)) {
+            System.out.println("Moving North Direction");
+            Point currentPosition = getCharacter().getCurrentPosition();
+            currentPosition.setLocation(currentPosition.x, currentPosition.y+1);
+            System.out.println("Moved North To:" + currentPosition);
+            status.setCurrentPosition(currentPosition);
+        }
 
-        status.currentPosition = new Point(1,0);
+        if(DIRECTION.SOUTH.equals(directionToMove)) {
+            System.out.println("Moving South Direction");
+            Point currentPosition = getCharacter().getCurrentPosition();
+
+            currentPosition.setLocation(currentPosition.x, currentPosition.y == 0 ? 0:currentPosition.y-1);
+            System.out.println("Moved South To:" + currentPosition);
+            status.setCurrentPosition(currentPosition);
+        }
+
     }
 
 }
