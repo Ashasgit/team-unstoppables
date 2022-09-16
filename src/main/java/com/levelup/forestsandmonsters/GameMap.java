@@ -21,4 +21,8 @@ public class GameMap {
     public int getYStart() {
         return yStart;
     }
+
+    public boolean isValidPostion(int newX, int newY) {
+        return newX>=0 && xLength>newX && newY>=0 && yLength>newY;
+    }
 }

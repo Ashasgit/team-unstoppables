@@ -86,11 +86,14 @@ public class GameController {
 
     }
     public void move(DIRECTION directionToMove) {
-        
+
+
         if(DIRECTION.NORTH.equals(directionToMove)) {
             System.out.println("Moving North Direction");
             Point currentPosition = getCharacter().getCurrentPosition();
-            currentPosition.setLocation(currentPosition.x, currentPosition.y+1);
+            if(map.isValidPostion(currentPosition.x, currentPosition.y+1)) {
+                currentPosition.setLocation(currentPosition.x, currentPosition.y+1);
+            }
             System.out.println("Moved North To:" + currentPosition);
             status.setCurrentPosition(currentPosition);
         }
@@ -99,11 +102,36 @@ public class GameController {
             System.out.println("Moving South Direction");
             Point currentPosition = getCharacter().getCurrentPosition();
 
-            currentPosition.setLocation(currentPosition.x, currentPosition.y == 0 ? 0:currentPosition.y-1);
+            if(map.isValidPostion(currentPosition.x, currentPosition.y-1)) {
+                currentPosition.setLocation(currentPosition.x, currentPosition.y-1);
+            }
+
             System.out.println("Moved South To:" + currentPosition);
             status.setCurrentPosition(currentPosition);
         }
 
+        if(DIRECTION.EAST.equals(directionToMove)) {
+            System.out.println("Moving EAST Direction");
+            Point currentPosition = getCharacter().getCurrentPosition();
+            if(map.isValidPostion(currentPosition.x+1, currentPosition.y)) {
+                currentPosition.setLocation(currentPosition.x+1, currentPosition.y);
+            }
+            System.out.println("Moved EAST To:" + currentPosition);
+            status.setCurrentPosition(currentPosition);
+        }
+
+        if(DIRECTION.WEST.equals(directionToMove)) {
+            System.out.println("Moving WEST Direction");
+            Point currentPosition = getCharacter().getCurrentPosition();
+            if(map.isValidPostion(currentPosition.x-1, currentPosition.y)) {
+                currentPosition.setLocation(currentPosition.x-1, currentPosition.y);
+            }
+            System.out.println("Moved WEST To:" + currentPosition);
+            status.setCurrentPosition(currentPosition);
+        }
+
     }
+
+
 
 }
